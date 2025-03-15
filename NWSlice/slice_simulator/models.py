@@ -20,6 +20,10 @@ class SimulationResult(models.Model):
 
     signal_strength = models.FloatField(default=0)
 
+    sinr = models.FloatField(default=0)
+
+    cqi = models.FloatField(default=0)
+
 
     def __str__(self):
 

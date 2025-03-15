@@ -37,7 +37,7 @@ def run_ns3_simulation():
     output_csv_path = "/home/ankit/ns-allinone-3.44/ns-3.44/5g_slicing_results.csv"
 
     # Read the output CSV
-    df = pd.read_csv(output_csv_path, names=["slice_type", "timestamp", "bytes_transmitted", "latency","jitter","packet_loss","throughput","user_count","signal_strength"])
+    df = pd.read_csv(output_csv_path, names=["slice_type", "timestamp", "bytes_transmitted", "latency","jitter","packet_loss","throughput","user_count","signal_strength", "sinr", "cqi"])
     print("Data Reading Complete")
 
     # Store results in DB
@@ -61,7 +61,12 @@ def run_ns3_simulation():
 
             user_count=row["user_count"],
 
-            signal_strength=row["signal_strength"]
+            signal_strength=row["signal_strength"],
+
+            sinr=row["sinr"],
+
+            cqi=row["cqi"],
+
 
         )
 

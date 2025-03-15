@@ -21,6 +21,9 @@
                     <th>Throughput</th>
                     <th>User Count</th>
                     <th>Signal Strength</th>
+                    <th>SINR</th>
+                    <th>CQI</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +38,9 @@
                     <td>{{ result.throughput }}</td>
                     <td>{{ result.user_count }}</td>
                     <td>{{ result.signal_strength }}</td>
+                    <td>{{ result.sinr }}</td>
+                    <td>{{ result.cqi }}</td>
+
                 </tr>
                 {% empty %}
                 <tr>

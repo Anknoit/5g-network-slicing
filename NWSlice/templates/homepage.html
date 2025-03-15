@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS-3 Simulation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(250, 250, 250);
+        }
+        #logo {
+            width: 800px;
+            margin-bottom: 20px;
+        }
+        #simulation-results {
+            margin-top: 30px;
+            display: none; /* Hidden initially */
+        }
+        .graph {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img id="logo" src="/static/logo.png" alt="Logo"> Add your logo here -->
+    <img id="logo" src="{% static 'img/ai.gif' %}" alt="My image">
+    <h1>NS-3 5G Network Slicing Simulator</h1>
+
+    <form  method="post" action="{% url 'start_simulation' %}">
+    <button id="run-simulation" class="btn btn-primary mt-3" type="submit">RUN SIMULATOR</button>
+    </form>
+</body>
+</html>

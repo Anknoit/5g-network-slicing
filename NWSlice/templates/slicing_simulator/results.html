@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Results</title>
+</head>
+<body>
+    <h1>Simulation Results</h1>
+
+    <!-- Display Graphs -->
+    <h2>Throughput by Slice Type</h2>
+    <img src="data:image/png;base64,{{ throughput_graph }}" alt="Throughput Graph">
+
+    <h2>Latency by Slice Type</h2>
+    <img src="data:image/png;base64,{{ latency_graph }}" alt="Latency Graph">
+
+    <!-- Display ML Model Results -->
+    <h2>Machine Learning Model Results</h2>
+    <p><strong>Accuracy:</strong> {{ accuracy }}</p>
+    <pre><strong>Classification Report:</strong><br>{{ report }}</pre>
+
+    <!-- Display Simulation Results -->
+    <h2>Simulation Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Slice Type</th>
+                <th>Timestamp</th>
+                <th>Bytes Transmitted</th>
+                <th>Latency</th>
+                <th>Jitter</th>
+                <th>Packet Loss</th>
+                <th>Throughput</th>
+                <th>User Count</th>
+                <th>Signal Strength</th>
+                <th>SINR</th>
+                <th>CQI</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.slice_type }}</td>
+                <td>{{ result.timestamp }}</td>
+                <td>{{ result.bytes_transmitted }}</td>
+                <td>{{ result.latency }}</td>
+                <td>{{ result.jitter }}</td>
+                <td>{{ result.packet_loss }}</td>
+                <td>{{ result.throughput }}</td>
+                <td>{{ result.user_count }}</td>
+                <td>{{ result.signal_strength }}</td>
+                <td>{{ result.sinr }}</td>
+                <td>{{ result.cqi }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
